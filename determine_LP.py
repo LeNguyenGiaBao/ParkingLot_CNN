@@ -44,5 +44,5 @@ if __name__ =="__main__":
     image = cv2.imread("bs6.jpg")
     wpod_net_model = load_model("wpod-net.json")
     plate_image = plate_image(image, wpod_net_model)
-    cv2.imshow('1', plate_image)
+    cv2.imshow('plate_image', plate_image)
     cv2.waitKey()

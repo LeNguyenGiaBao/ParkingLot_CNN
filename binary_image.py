@@ -1,4 +1,4 @@
-# from determine_LP import *
+from determine_LP import *
 import cv2
 
 def binary_image(image):
@@ -20,5 +20,13 @@ def binary_image(image):
     thre_mor = cv2.morphologyEx(binary, cv2.MORPH_DILATE, kernel3)
 
     return thre_mor
+
+if __name__ == "__main__":
+    image = cv2.imread("bs6.jpg")
+    wpod_net_model = load_model("wpod-net.json")
+    plate_image = plate_image(image, wpod_net_model)
+    binary_plate_image = binary_image(plate_image)
+    cv2.imshow('binary_plate_image', binary_plate_image)
+    cv2.waitKey()
 
 
