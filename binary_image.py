@@ -1,5 +1,4 @@
 from determine_LP import *
-import cv2
 
 def binary_image(image):
 

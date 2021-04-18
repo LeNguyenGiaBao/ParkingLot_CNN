@@ -1,4 +1,3 @@
-import cv2
 from determine_LP import *
 from binary_image import *
 
