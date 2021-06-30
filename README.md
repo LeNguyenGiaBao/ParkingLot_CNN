@@ -25,3 +25,21 @@
 ## Trainning
 ![Accuracy](https://github.com/LeNguyenGiaBao/ParkingLot_CNN/blob/master/images/Accuracy.png)
 ![Loss](https://github.com/LeNguyenGiaBao/ParkingLot_CNN/blob/master/images/Loss.png)
+
+## Using
+
+- Change username, password of your account MySQL
+- Uncomment line 15-19 in sql.py and run file to create database. 
+- Connect with IP Camera (recommend DroidCam on Android or IOS)
+- Replace "url" by your address ip camera
+- Put the QR Code in front of the camera and license plate image in front of your ip camera
+
+Check In
+
+![UI](https://github.com/LeNguyenGiaBao/ParkingLot_CNN/blob/master/images/demo_1.jpg)
+
+Check Out (with another license plate)
+
+![UI](https://github.com/LeNguyenGiaBao/ParkingLot_CNN/blob/master/images/demo.jpg)
+
+
