@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from local_utils import detect_lp
+from utils.local_utils import detect_lp
 from keras.models import model_from_json
 from os.path import splitext
 
@@ -41,8 +41,9 @@ def plate_image(image, wpod_net):
     return plate_img
 
 if __name__ =="__main__":
-    image = cv2.imread("bs6.jpg")
-    wpod_net_model = load_model("wpod-net.json")
+    image = cv2.imread("./images/bs6.jpg")
+    print(image.shape)
+    wpod_net_model = load_model("./model/wpod-net.json")
     plate_image = plate_image(image, wpod_net_model)
     cv2.imshow('plate_image', plate_image)
     cv2.waitKey()

@@ -49,19 +49,17 @@ def get_characters(image):
 	return charater_top, charater_bot
 
 if __name__ == "__main__":
-	image = cv2.imread("bs5.jpg")
-	wpod_net_model = load_model("wpod-net.json")
+	image = cv2.imread("./images/bs5.jpg")
+	wpod_net_model = load_model("./model/wpod-net.json")
 	plate_image = plate_image(image, wpod_net_model)
 	binary_plate_image = binary_image(plate_image)
 	charater_top, charater_bot = get_characters(binary_plate_image)
 	for character in charater_top:
 		cv2.destroyAllWindows()
 		cv2.imshow('top', character)
-		cv2.imwrite('result.jpg', character)
-		break
 		cv2.waitKey()
 
-	# for character in charater_bot:
-	# 	cv2.destroyAllWindows()
-	# 	cv2.imshow('bottom', character)
-	# 	cv2.waitKey()
+	for character in charater_bot:
+		cv2.destroyAllWindows()
+		cv2.imshow('bottom', character)
+		cv2.waitKey()

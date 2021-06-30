@@ -17,7 +17,7 @@ def connect():
 # cursor.execute("CREATE DATABASE baixe;")
 # cursor.execute("USE baixe;")
 # cursor.execute("CREATE TABLE bang (id INT NOT NULL AUTO_INCREMENT, mssv VARCHAR(50) NULL, bienso VARCHAR(50) NULL, trangthai BIT NULL, thoigianthue DATETIME NULL, thoigiantra DATETIME NULL, anh MEDIUMBLOB NULL, PRIMARY KEY (id))")
-# cursor.execute("SHOW tables")
+
 
 def insert_data(mssv,bienso,img):
         try:

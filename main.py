@@ -21,20 +21,20 @@ previour_time = time.time()
 
 frame_image = 1
 
-url = "http://192.168.1.4:4747/video"
+url = "http://192.168.1.2:4747/video"
 
 
 # load model
-wpod_net = load_model("wpod-net.json")
+wpod_net = load_model("model/wpod-net.json")
 
-json_file = open('MobileNets_character_recognition.json', 'r')
+json_file = open('model/MobileNets_character_recognition.json', 'r')
 loaded_model_json = json_file.read()
 
 model = model_from_json(loaded_model_json)
-model.load_weights("License_character_recognition_weight.h5")
+model.load_weights("model/License_character_recognition_weight.h5")
 
 labels = preprocessing.LabelEncoder()
-labels.classes_ = np.load('license_character_classes.npy')
+labels.classes_ = np.load('model/license_character_classes.npy')
 
 json_file.close()
 
@@ -109,7 +109,7 @@ def clear_data():
 	lbPlate_ip['text'] = ''	
 	lb_time_park['text'] = ''
 
-	image = cv2.imread('gray.jpg')
+	image = cv2.imread('images/gray.jpg')
 	imgtk = cv2_to_imageTK(image)
 	lb_image_saved.imgtk = imgtk
 	lb_image_saved.configure(image = imgtk)
@@ -172,10 +172,10 @@ def time_clock():
 
 
 def play_sound_xevao():
-	playsound('xevao.mp3')
+	playsound('audio/xevao.mp3')
 
 def play_sound_xera():
-	playsound('xera.mp3')
+	playsound('audio/xera.mp3')
 
 
 root = tk.Tk()

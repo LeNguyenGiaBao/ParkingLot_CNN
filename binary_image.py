@@ -21,8 +21,8 @@ def binary_image(image):
     return thre_mor
 
 if __name__ == "__main__":
-    image = cv2.imread("bs6.jpg")
-    wpod_net_model = load_model("wpod-net.json")
+    image = cv2.imread("./images/bs6.jpg")
+    wpod_net_model = load_model("./model/wpod-net.json")
     plate_image = plate_image(image, wpod_net_model)
     binary_plate_image = binary_image(plate_image)
     cv2.imshow('binary_plate_image', binary_plate_image)
