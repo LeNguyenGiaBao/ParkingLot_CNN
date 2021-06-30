@@ -17,20 +17,20 @@ def string_LP(list_image, model, labels):
 	return final_string
 
 if __name__ == "__main__":
-	image = cv2.imread("bs6.jpg")
-	wpod_net_model = load_model("wpod-net.json")
+	image = cv2.imread("./images/bs6.jpg")
+	wpod_net_model = load_model("./model/wpod-net.json")
 	plate_image = plate_image(image, wpod_net_model)
 	binary_plate_image = binary_image(plate_image)
 	charater_top, charater_bot = get_characters(binary_plate_image)
 
-	json_file = open('MobileNets_character_recognition.json', 'r')
+	json_file = open('./model/MobileNets_character_recognition.json', 'r')
 	loaded_model_json = json_file.read()
 
 	model = model_from_json(loaded_model_json)
-	model.load_weights("License_character_recognition_weight.h5")
+	model.load_weights("./model/License_character_recognition_weight.h5")
 
 	labels = preprocessing.LabelEncoder()
-	labels.classes_ = np.load('license_character_classes.npy')
+	labels.classes_ = np.load('./model/license_character_classes.npy')
 
 	json_file.close()
 
